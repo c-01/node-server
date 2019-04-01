@@ -1,13 +1,13 @@
+// Event
 
-//@ file systems
+const EventEmitter = require('events');
 
-const fs = require('fs');
+const emitter = new EventEmitter();
 
-// const files = fs.readdirSync('./'); // not has callback fn
-// console.log(files); // [ '.git', '.gitignore', 'app.js', 'logger.js', 'package.json' ]
-
-fs.readdir('./', function(err, files) {
-    if (err) console.log('Error ' + err);
-     else console.log('Result ', files);
-     
+// register a listener
+emitter.on('dosomething', function() {
+    console.log('Listener called !');
+    
 });
+// Raise an event : call event
+emitter.emit('dosomething');
