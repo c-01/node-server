@@ -1,10 +1,13 @@
 
-const os = require('os');
+//@ file systems
 
-var totalMemory = os.totalmem();
-console.log('Total memory ' + totalMemory);
-var freeMemory = os.freemem();
-console.log('Free memory ' + freeMemory);
+const fs = require('fs');
 
-// Template tring
-// ES6/ECMAScript 6
+// const files = fs.readdirSync('./'); // not has callback fn
+// console.log(files); // [ '.git', '.gitignore', 'app.js', 'logger.js', 'package.json' ]
+
+fs.readdir('./', function(err, files) {
+    if (err) console.log('Error ' + err);
+     else console.log('Result ', files);
+     
+});
