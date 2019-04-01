@@ -1,9 +1,10 @@
 
-const lon = require('./logger');
-const path = require('path');
+const os = require('os');
 
-var pathObj = path.parse(__dirname);
+var totalMemory = os.totalmem();
+console.log('Total memory ' + totalMemory);
+var freeMemory = os.freemem();
+console.log('Free memory ' + freeMemory);
 
-console.log(pathObj);
-
-
+// Template tring
+// ES6/ECMAScript 6
